@@ -1,0 +1,249 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    box-sizing: border-box;
+    outline: 0;
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+.chat {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    background: #f5f5f5;
+    width: 300px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.search {
+    height: 50px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.search input {
+    width: 100%;
+    border: none;
+    height: 30px;
+    border-radius: 30px;
+    padding: 0 15px;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.search label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: rgba(0,0,0, .5);
+}
+
+.sidebar .contacts {
+    background: #f8f8f8;
+    overflow: auto;
+}
+
+.sidebar .contacts .active a {
+    background: #fff;
+}
+
+.sidebar .contacts ul li a {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.sidebar .contacts ul li a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    align-items: center;
+}
+
+.sidebar .contacts ul li a .inner .name {
+    font-weight: 500;
+    color: #111;
+    font-size: 15px;
+}
+
+.sidebar .contacts ul li a .inner .message {
+    color: rgba(0,0,0, .6);
+    font-size: 13px;
+    padding-top: 3px;
+}
+
+.sidebar .contacts ul li a .notification {
+    margin-left: auto;
+    width: 18px;
+    height: 18px;
+    background: red;
+    color: #fff;
+    text-align: center;
+    font-size: 11px;
+    line-height: 17px;
+    border-radius: 50%;
+}
+
+.sidebar .contacts ul li a .notification:empty {
+    display: none;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .message-header {
+    display: flex;
+    height: 50px;
+    min-height: 50px;
+    align-items: center;
+    padding: 0 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.content .message-header img {
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.content .message-header .inner .name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+}
+
+.content .message-header .inner .last-message {
+    font-size: 12px;
+    color: rgba(0,0,0, .4);
+}
+
+.content .message-header .actions {
+    margin-left: auto;
+    display: flex;
+}
+
+.content .message-header .actions a {
+    font-size: 20px;
+    color: rgba(1,1,1, .3);
+    width: 30px;
+    text-align: center;
+}
+
+.content .message-header .actions a:hover {
+    color: rgba(1,1,1, .7);
+}
+
+.message-content {
+    flex: 1;
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.message-content::before {
+    content: '';
+    margin-bottom: auto;
+}
+
+.message-content .message {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    align-self: flex-start;
+    max-width: 50%;
+}
+
+.message-content .message .bubble {
+    background: #f7f7f7;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 140%;
+}
+
+.message-content .message .time {
+    font-size: 12px;
+    color: rgba(0,0,0, .4);
+    padding: 5px 0 0 12px;
+}
+
+.message-content .me {
+    align-self: flex-end;
+}
+
+.message-content .me .bubble {
+    background: #2196f3;
+    color: #fff;
+}
+
+.message-content .message .me .time {
+    align-self: flex-end;
+    padding-right: 5px;
+}
+
+.message-send {
+    display: flex;
+    padding: 10px 5px;
+    border-top: 1px solid #ddd;
+}
+
+.message-send > * {
+    margin: 0 5px;
+}
+
+.message-send input {
+    flex: 1;
+    border: 1px solid #e5e5e5;
+    height:36px;
+    border-radius: 36px;
+    line-height: 36px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.message-send button {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 16px;
+    border: none;
+    background: #f5f5f5;
+    color: #fff;
+    cursor: pointer;
+}
+
+.message-send .emoji-btn {
+    background: #339af0;
+}
+
+.message-send .sound-btn {
+    background: #ff5722;
+}
+
+.message-send .image-btn {
+    background: #4caf50;
+}
